@@ -46,6 +46,21 @@ main.addEventListener('dblclick', function() {
 }); 
 
 //6) Diminuer la taille des buttons en les survolants et restaurer leurs taille d'origine en les re-survolant 
+for(let i = 0; i < 6; i++){
+    let card = document.getElementsByClassName('col-md-4')[i];
+    let textContent = card.querySelector('p');
+    let image = card.querySelector('img');
+    let btnView = card.querySelector('button');
+    btnView.addEventListener('mouseover', function(){
+        textContent.classList.toggle("collapse") ;
+        if (image.style.width === '20%'){
+            image.style.width = '' ;
+        } else {
+            image.style.width = "20%";
+        };
+    });
+};
+
 
 //7) transvaser les places des cards en cliquant sur le bouton gris
 let btnNext = document.querySelector("body > main > section > div > p > a.btn.btn-secondary.my-2") //selectionner le bouton
